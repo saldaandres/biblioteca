@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Usuarios"
+    android:background="@color/backgroundBlue">
+
+    <TextView
+        android:layout_margin="30dp"
+        android:textColor="@color/gray"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Usuarios"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        />
+
+    <EditText
+        android:id="@+id/editTextUserId"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:drawableStart="@drawable/ic_baseline_numbers_24"
+        android:ems="10"
+        android:hint="Id. Usuario"
+        android:inputType="number"
+        android:textColorHint="@color/gray" />
+
+    <EditText
+        android:textColorHint="@color/gray"
+        android:id="@+id/editTextUserName"
+        android:layout_width="250dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Nombre"/>
+
+    <EditText
+        android:textColorHint="@color/gray"
+        android:id="@+id/editTextEmail"
+        android:layout_width="250dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textEmailAddress"
+        android:hint="Correo"/>
+
+    <EditText
+        android:textColorHint="@color/gray"
+        android:id="@+id/editTextPassword"
+        android:layout_width="250dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPassword"
+        android:hint="Password"/>
+
+
+    <LinearLayout
+        android:layout_marginTop="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        >
+
+        <Button
+            android:backgroundTint="@color/teal_700"
+            android:id="@+id/buttonAgregar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Agregar"
+            />
+
+        <Button
+            android:layout_marginLeft="20dp"
+            android:backgroundTint="@color/teal_700"
+            android:id="@+id/buttonBuscar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Buscar"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        >
+
+        <Button
+            android:backgroundTint="@color/teal_700"
+            android:id="@+id/buttonIngresar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ingresar"
+            />
+
+    </LinearLayout>
+
+</LinearLayout>
