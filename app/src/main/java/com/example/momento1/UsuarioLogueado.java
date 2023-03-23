@@ -51,7 +51,6 @@ public class UsuarioLogueado extends AppCompatActivity {
                     Toast.makeText(UsuarioLogueado.this, "Rellena todos los campos si quieres editar", Toast.LENGTH_SHORT).show();
                     return;
                 }
-                SQLiteDatabase database = sqLite.getReadableDatabase();
                 updateUser(id, nombreString, correoString, passwordString);
             }
         });

@@ -34,12 +34,20 @@
             android:text="Usuarios" />
 
         <Button
-            android:id="@+id/buttonAdministrador"
+            android:id="@+id/buttonAdministrarLibros"
             android:layout_marginTop="10dp"
             android:layout_gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Administrador" />
+            android:text="Admin. Libros" />
+
+        <Button
+            android:id="@+id/buttonAdmininistrarUsuarios"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Admin. Usuarios" />
 
     </LinearLayout>
 

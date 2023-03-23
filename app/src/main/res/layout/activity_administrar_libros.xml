@@ -40,7 +40,7 @@
         android:layout_marginTop="10dp"
         android:ems="10"
         android:hint="Nombre"
-        android:inputType="text"
+        android:inputType="textPersonName"
         android:textColorHint="@color/gray" />
 
     <EditText
@@ -62,8 +62,7 @@
         android:layout_marginTop="10dp"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="number"
-        android:hint="Disponible" />
+        android:inputType="number" />
 
 
     <LinearLayout

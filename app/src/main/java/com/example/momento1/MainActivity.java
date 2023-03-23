@@ -15,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         getSupportActionBar().hide();
-        buttonAdmin = findViewById(R.id.buttonAdministrador);
+        buttonAdmin = findViewById(R.id.buttonAdministrarLibros);
         buttonUser = findViewById(R.id.buttonUsuarios);
 
         buttonUser.setOnClickListener(new View.OnClickListener() {
