@@ -8,15 +8,17 @@ import android.view.View;
 import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
-    Button buttonUser, buttonAdmin;
+    Button buttonUser, buttonAdminLibros;
+    Button buttonAdminUsers;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         getSupportActionBar().hide();
-        buttonAdmin = findViewById(R.id.buttonAdministrarLibros);
+        buttonAdminLibros = findViewById(R.id.buttonAdministrarLibros);
         buttonUser = findViewById(R.id.buttonUsuarios);
+        buttonAdminUsers = findViewById(R.id.buttonAdmininistrarUsuarios);
 
         buttonUser.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -26,13 +28,23 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        buttonAdmin.setOnClickListener(new View.OnClickListener() {
+        buttonAdminLibros.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intentAdmin = new Intent(getApplicationContext(), AdministrarLibros.class);
-                startActivity(intentAdmin);
+                Intent intentAdminLibros = new Intent(getApplicationContext(), AdministrarLibros.class);
+                startActivity(intentAdminLibros);
             }
         });
+
+        buttonAdminUsers.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentAdminUsers = new Intent(getApplicationContext(), AdministrarUsuarios.class);
+                startActivity(intentAdminUsers);
+            }
+        });
+
+
 
     }
 }

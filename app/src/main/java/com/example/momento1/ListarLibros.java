@@ -39,8 +39,8 @@ public class ListarLibros extends AppCompatActivity {
         libros = leerBaseDatos();
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, R.layout.item, R.id.viewItem, libros);
         listView.setAdapter(adapter);
-
     }
+
     private ArrayList<String> leerBaseDatos() {
         ArrayList<String> libros = new ArrayList<>();
         SQLite sqLite = new SQLite(getApplicationContext(), "dbLibrary", null, 1);
