@@ -14,7 +14,7 @@ import android.widget.Toast;
 
 public class UsuarioLogueado extends AppCompatActivity {
     SQLite sqLite = new SQLite(this, "dbLibrary", null, 1);
-    Button btnEditar, btnEliminar;
+    Button btnEditar, btnEliminar, btnRentas;
     TextView textId, textStatus;
     EditText editNombre, editCorreo, editPassword;
 
@@ -30,6 +30,7 @@ public class UsuarioLogueado extends AppCompatActivity {
         editCorreo = findViewById(R.id.editTextEmail);
         editPassword = findViewById(R.id.editTextPassword);
         textStatus = findViewById(R.id.textViewStatus);
+        btnRentas = findViewById(R.id.buttonRentas);
         Intent intentUsuarios = getIntent();
 
         int id = intentUsuarios.getIntExtra("idUser", -1);
@@ -61,6 +62,16 @@ public class UsuarioLogueado extends AppCompatActivity {
                 deleteUser(id);
                 Toast.makeText(UsuarioLogueado.this, "Has eliminado tu cuenta", Toast.LENGTH_SHORT).show();
                 finish();
+            }
+        });
+
+        btnRentas.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentRentas = new Intent(getApplicationContext(), Rentas.class);
+                intentRentas.putExtra("idUser", id);
+                intentRentas.putExtra("status", status);
+                startActivity(intentRentas);
             }
         });
     }
