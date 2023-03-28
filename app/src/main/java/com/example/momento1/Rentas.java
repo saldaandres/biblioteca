@@ -43,13 +43,6 @@ public class Rentas extends AppCompatActivity {
                 startActivity(intentLibros);
             }
         });
-
-        btnRetornar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
         
         btnRentar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -101,12 +94,12 @@ public class Rentas extends AppCompatActivity {
                 }
                 int idLibro = Integer.parseInt(idLibroString);
                 Cursor cursor = buscarRenta(idUser, idLibro);
-                if (!cursor.moveToFirst()){
-                    Toast.makeText(Rentas.this, "No tienes una renta de ese libro", Toast.LENGTH_SHORT).show();
-                    return;
+                if (!cursor.moveToFirst()) {
+                    Toast.makeText(Rentas.this, "No tienes este libro rentado", Toast.LENGTH_SHORT).show();
                 }
-                updateLibro(idLibro, 0);
-                updateRenta(cursor.getInt(0), "Devuelto");
+                updateRenta(cursor.getInt(0), "cerrado");
+                updateLibro(cursor.getInt(1), 0);
+                Toast.makeText(Rentas.this, "Has retornado el libro", Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -145,14 +138,16 @@ public class Rentas extends AppCompatActivity {
 
     private Cursor buscarRenta(int idUser, int idBook) {
         SQLiteDatabase database = sqLite.getReadableDatabase();
-        String query = "SELECT idRent FROM books WHERE idUser = " + idUser + "&&" + "idBook = " +idBook;
-        Cursor cursor = database.rawQuery(query, null);
-        return cursor;
+        String table = "rents";
+        String[] columns = { "idRent", "idBook", "idUser"};
+        String selection = "idBook = ? AND idUser = ? AND date != ?";
+        String[] selectionArgs = {String.valueOf(idBook), String.valueOf(idUser), "cerrado"};
+        return database.query(table, columns, selection, selectionArgs, null, null, null);
     }
 
-    private void updateRenta(int idRent,String date) {
+    private void updateRenta(int idRent, String fecha) {
         ContentValues contentValues = new ContentValues();
-        contentValues.put("date", "0000");
+        contentValues.put("date", fecha);
         String whereClause = "idRent = ?";
         String[] whereArgs = { String.valueOf(idRent)};
         SQLiteDatabase database = sqLite.getReadableDatabase();

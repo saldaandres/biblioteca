@@ -50,7 +50,7 @@ public class MiHistorial extends AppCompatActivity {
         Cursor cursor = database.rawQuery(query, null);
         if (cursor.moveToFirst()) {
             do {
-                String renta = "Renta #: " + cursor.getInt(0) + "\n" + "Usuario : " +cursor.getString(1) + "\n" + "Libro: " + cursor.getInt(2) + "\n" + "Fecha : " + cursor.getInt(3);
+                String renta = "Renta #: " + cursor.getInt(0) + "\n" + "Usuario : " +cursor.getString(1) + "\n" + "Libro: " + cursor.getInt(2) + "\n" + "Fecha : " + cursor.getString(3);
                 prestamos.add(renta);
             } while (cursor.moveToNext());
         }
